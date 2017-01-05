@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightPlateApp", "WeightPlateApp\WeightPlateApp.csproj", "{7FD9E8A1-1770-4FB7-A37E-7FC4B918535D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightPlateTest", "WeightPlateTest\WeightPlateTest.csproj", "{198E6568-FD83-4328-A04D-792AF4F18200}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FD9E8A1-1770-4FB7-A37E-7FC4B918535D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD9E8A1-1770-4FB7-A37E-7FC4B918535D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD9E8A1-1770-4FB7-A37E-7FC4B918535D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD9E8A1-1770-4FB7-A37E-7FC4B918535D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198E6568-FD83-4328-A04D-792AF4F18200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198E6568-FD83-4328-A04D-792AF4F18200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198E6568-FD83-4328-A04D-792AF4F18200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198E6568-FD83-4328-A04D-792AF4F18200}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
