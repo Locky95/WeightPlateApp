@@ -20,34 +20,34 @@ namespace WeightPlateApp
             return weightEitherSideOfBar;
         }
 
-
+           
         public String weightToDisplay(double weightEitherSideOfBar)
         {
             String txt = "";
             double weightLeft;
-  
-               txt += "\n20 plates : " + (int) calcWeight(weightEitherSideOfBar) / 20 + "\n";
-                weightLeft = weightEitherSideOfBar % 20;
+            weightLeft = calcWeight(weightEitherSideOfBar);   
+               txt += "\n20 plates : " + (int) weightLeft / 20 + "\n";
+                weightLeft = weightLeft % 20;
                 if(weightLeft > 0)
                 {
                     txt += "15 plates : " + (int)weightLeft / 15 + "\n";
-                    weightLeft = (int)weightLeft % 15;
+                    weightLeft = weightLeft % 15;
                     if(weightLeft> 0)   
 
                     {
                         txt += "10 plates : " + (int)weightLeft / 10 + "\n";
-                        weightLeft = (int)weightLeft % 10;
+                        weightLeft = weightLeft % 10;
                         if (weightLeft > 0)
                         {
                             txt += "5 plates : " + (int)weightLeft / 5 + "\n";
                             weightLeft = weightLeft % 5;
                         if (weightLeft > 0)
                             {
-                                txt += "2.5 plates : "+ (int) weightLeft / 2 + "\n" ;
+                                txt += "2.5 plates : "+ (int) weightLeft / 2 + "\n\n" ;
                                 weightLeft = weightLeft % 2.5;
-                            if (weightLeft > 0 )
+                            if (weightLeft == 1.25 )
                                 {
-                                    txt += "1.25 plates : 1\n";
+                                    txt += "1.25 plates : " + weightLeft / 1.25 + "\n";
                                 }
                             }
                         }
