@@ -8,21 +8,11 @@ namespace WeightPlateApp
 {
     public class WeightCalculator
     {
-        double weight = 0;
+        public WeightCalculator()
+        {
 
-        public WeightCalculator(double weight)
-        {
-            setWeight(weight);
         }
-
-        public void setWeight(double weight)
-        {
-            this.weight = weight;
-        }
-        public double getWeight()
-        {
-            return weight;
-        }
+        
 
         public double calcWeight(double weight)
         {
@@ -35,39 +25,34 @@ namespace WeightPlateApp
         {
             String txt = "";
             double weightLeft;
-            double weight;
-            txt += "20 plates : " + (int)weightEitherSideOfBar / 20 + "\n";
-            if (weightEitherSideOfBar % 20 > 0)
-            {
-                txt += "20 plates : " + (int)weightEitherSideOfBar / 20 + "\n";
-                weightLeft = (int)weightEitherSideOfBar % 20;
-                if(weightLeft % 20 > 0)
+  
+               txt += "\n20 plates : " + (int) calcWeight(weightEitherSideOfBar) / 20 + "\n";
+                weightLeft = weightEitherSideOfBar % 20;
+                if(weightLeft > 0)
                 {
                     txt += "15 plates : " + (int)weightLeft / 15 + "\n";
                     weightLeft = (int)weightLeft % 15;
-                    if(weightLeft%15 > 0)   
+                    if(weightLeft> 0)   
 
                     {
                         txt += "10 plates : " + (int)weightLeft / 10 + "\n";
                         weightLeft = (int)weightLeft % 10;
-                        if (weightLeft % 10 > 0)
+                        if (weightLeft > 0)
                         {
                             txt += "5 plates : " + (int)weightLeft / 5 + "\n";
-                            weightLeft = weightLeft -  5;
-                            if (weightLeft == 2.5)
-
+                            weightLeft = weightLeft % 5;
+                        if (weightLeft > 0)
                             {
-                                txt += "2.5 plates : 1\n" ;
-                                weightLeft = weightLeft - 2.5;
-                             if (weightLeft >= 1.25 )
+                                txt += "2.5 plates : "+ (int) weightLeft / 2 + "\n" ;
+                                weightLeft = weightLeft % 2.5;
+                            if (weightLeft > 0 )
                                 {
-                                    txt += "1.25 plates : 1\n";/*+ (int)weightLeft / 1.25 + "\n";*/
+                                    txt += "1.25 plates : 1\n";
                                 }
                             }
                         }
 
                     }
-                }
             }
             return txt;
         }
@@ -75,29 +60,34 @@ namespace WeightPlateApp
 
 
         // recursive method
-        public void calcPlatesNeeded(double weight)
+        public String calcPlatesNeeded(double weight)
         {
-            subCalcPlatesNeeded(20, calcWeight(100));
+           String txt = subCalcPlatesNeeded(20, calcWeight(weight));
+            return txt;
         }
 
         private String subCalcPlatesNeeded(double plate, double weight)
         {
             String txt = "";
             double weightLeft = 0;
-            txt += plate + " plates : " + (int)weight / plate + "\n";
-            if(weight == 0)
+         //   txt += plate + " plates : " + (int)weight / plate + "\n";
+            if(weight <= 1)
             {
                 return txt;
             }
             if(plate >= 5)
             {
-                //calc here
+                txt += "\n"+plate + "'s : 1";
                 plate = plate / 2;
                 subCalcPlatesNeeded(plate, weightLeft);
+                return txt;
             }
             else
             {
-               
+                txt += "\n" + plate + "'s : " + (int)weight/plate;
+                weight = weight % plate;
+                plate = plate - 5;
+                subCalcPlatesNeeded(plate, weightLeft);
             }
             return txt;
         }
