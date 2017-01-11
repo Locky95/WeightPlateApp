@@ -8,9 +8,18 @@ namespace WeightPlateApp
 {
     public class WeightCalculator
     {
+        public double weight;
         public WeightCalculator()
         {
 
+        }
+        public void setWeight(double weight)
+        {
+            this.weight = weight;
+        }
+        public double getWeight()
+        {
+            return weight;
         }
         
 
@@ -23,31 +32,37 @@ namespace WeightPlateApp
            
         public String weightToDisplay(double weightEitherSideOfBar)
         {
-            String txt = "";
+            String txt = "Put the following plates on both sides of the bar :                             ";
             double weightLeft;
-            weightLeft = calcWeight(weightEitherSideOfBar);   
-               txt += "\n20 plates : " + (int) weightLeft / 20 + "\n";
+            weightLeft = calcWeight(weightEitherSideOfBar);
+               
+               txt += "\n20 plates : " + (int) weightLeft / 20 + "     \n";
                 weightLeft = weightLeft % 20;
                 if(weightLeft > 0)
-                {
-                    txt += "15 plates : " + (int)weightLeft / 15 + "\n";
+                { 
+                    txt += "\n15 plates : " + (int)weightLeft / 15 + "      \n";
                     weightLeft = weightLeft % 15;
                     if(weightLeft> 0)   
 
                     {
-                        txt += "10 plates : " + (int)weightLeft / 10 + "\n";
+                        txt += "\n10 plates : " + (int)weightLeft / 10 + "         \n";
                         weightLeft = weightLeft % 10;
                         if (weightLeft > 0)
                         {
-                            txt += "5 plates : " + (int)weightLeft / 5 + "\n";
+                            txt += "\n5 plates : " + (int)weightLeft / 5 + "      \n";
                             weightLeft = weightLeft % 5;
                         if (weightLeft > 0)
                             {
-                                txt += "2.5 plates : "+ (int) weightLeft / 2 + "\n\n" ;
+                                txt += "\n2.5 plates : "+ (int) weightLeft / 2 + "      \n\n" ;
                                 weightLeft = weightLeft % 2.5;
-                            if (weightLeft == 1.25 )
+                            if (weightLeft >= 1.25 )
                                 {
-                                    txt += "1.25 plates : " + weightLeft / 1.25 + "\n";
+                                    txt += "\n1.25 plates : " + (int) weightLeft / 1 + "      \n";
+                                weightLeft = weightLeft % 1.25;
+                                if (weightLeft > 0)
+                                {
+                                    txt += "\nWeight left over = " + (Math.Round(weightLeft, 2)) * 2 ;
+                                }
                                 }
                             }
                         }
