@@ -78,33 +78,33 @@ namespace WeightPlateApp
         public String calcPlatesNeeded(double weight)
         {
            String txt = subCalcPlatesNeeded(20, calcWeight(weight));
-            return txt;
+           return txt;
         }
 
         private String subCalcPlatesNeeded(double plate, double weight)
         {
-            String txt = "";
-            double weightLeft = 0;
-         //   txt += plate + " plates : " + (int)weight / plate + "\n";
-            if(weight <= 1)
+            double weightLeft;
+            String txt = "Total Weight : " + ((weight * 2)+20) + "\n";
+            if (weight <= 1)
             {
+                txt += "done";
                 return txt;
             }
-            if(plate >= 5)
+            if(plate > 5 && weight > 0)
             {
-                txt += "\n"+plate + "'s : 1";
-                plate = plate / 2;
-                subCalcPlatesNeeded(plate, weightLeft);
-                return txt;
-            }
-            else
-            {
-                txt += "\n" + plate + "'s : " + (int)weight/plate;
-                weight = weight % plate;
+                txt += "\n" + plate + "'s : " + (int)weight / (int)plate + "\n";
+                weightLeft = weight % plate;
                 plate = plate - 5;
                 subCalcPlatesNeeded(plate, weightLeft);
             }
-            return txt;
+            else
+            {
+                txt += "\n" + plate + "'s : " + (int) weight / (int)plate + "\n";
+                weightLeft = weight % plate;
+                plate = plate / 2;
+               subCalcPlatesNeeded(plate, weightLeft);
+            }
+            return txt += subCalcPlatesNeeded(plate, weightLeft);  
         }
 
     }

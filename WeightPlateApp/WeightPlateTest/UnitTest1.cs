@@ -24,8 +24,8 @@ namespace WeightPlateTest
         {
             WeightCalculator a = new WeightCalculator();
 
-            String result = a.weightToDisplay(90);
-            String expectedResult = "20 plates : 2 ";
+            String result = a.weightToDisplay(10);
+            String expectedResult = "20 plates : 2\n";
 
             Assert.AreEqual(expectedResult, result);
 
@@ -35,7 +35,7 @@ namespace WeightPlateTest
         {
             WeightCalculator a = new WeightCalculator();
 
-            String result = a.calcPlatesNeeded(100);
+            String result = a.calcPlatesNeeded(137.5);
             String expectedResult = "20 plates : 2 ";
 
             Assert.AreEqual(expectedResult, result);
