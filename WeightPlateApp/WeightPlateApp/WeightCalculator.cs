@@ -26,6 +26,7 @@ namespace WeightPlateApp
             double weightEitherSideOfBar = (weight - 20) / 2;
             return weightEitherSideOfBar;
         }  
+        //iterative approach
         public String weightToDisplay(double weightEitherSideOfBar)
         {
             String txt = "Put the following plates on both sides of the bar :                             \n\n";
