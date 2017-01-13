@@ -23,12 +23,14 @@ namespace WeightPlateApp
         {
             return alarm;
         }
+       
         public String checkAlarm(DateTime alarm)
         {   
             String txt = "not working" + alarm.ToString("hh:mm tt");
-            if (alarm.ToString("hh:mm tt") == DateTime.Now.ToString("hh:mm tt"))
+            if (alarm.ToString("hh:mm tt").Equals( DateTime.Now.ToString("hh:mm tt")))
             {
                 txt = "Take Your supplements";
+
             }
             return txt;
         }
