@@ -58,7 +58,7 @@ namespace WeightPlateApp
         private void button1_Click(object sender, EventArgs e)
         {
             
-            txtDisplay.Text = a.weightToDisplay(Convert.ToDouble(txtWeight.Text));
+            //txtDisplay.Text = a.weightToDisplay(Convert.ToDouble(txtWeight.Text));
 
 
         }
